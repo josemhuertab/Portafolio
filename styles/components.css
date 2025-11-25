@@ -1,0 +1,242 @@
+/* ==========================================================================
+   PORTFOLIO COMPONENTS - BEM Methodology
+   ========================================================================== */
+
+/* Portfolio Container
+   ========================================================================== */
+.portfolio {
+  @apply min-h-screen pb-0 sm:pb-6;
+}
+
+.portfolio__container {
+  @apply mx-auto max-w-3xl px-5 mb-5 flex flex-col gap-10;
+}
+
+.portfolio__divider {
+  @apply border border-dotted border-gray-300 dark:border-gray-700 rounded-md;
+}
+
+/* Header Component
+   ========================================================================== */
+.header {
+  @apply mx-auto max-w-3xl sticky top-0 z-10;
+}
+
+.header__container {
+  @apply w-full bottom-0 static flex justify-end items-center py-1 px-5 z-20;
+  @apply bg-white/80 dark:bg-[#1a1a1a]/80 backdrop-blur-lg;
+}
+
+.header__theme-toggle {
+  @apply py-4 px-2 sm:py-5 flex items-center gap-4 outline-none;
+  @apply transition-transform hover:scale-110 active:scale-95;
+}
+
+.header__icon {
+  @apply w-6 h-6 text-gray-700 dark:text-gray-200;
+}
+
+/* Hero Component
+   ========================================================================== */
+.hero {
+  @apply flex flex-col gap-16;
+}
+
+.hero__content {
+  @apply flex flex-col sm:flex-row items-center gap-5;
+}
+
+.hero__image-wrapper {
+  @apply relative w-44 h-44 border-8 border-white dark:border-[#0f0f0f];
+  @apply bg-gray-100 dark:bg-[#0f0f0f] shadow-lg rounded-full overflow-hidden;
+}
+
+.hero__image {
+  @apply rounded-full drop-shadow-2xl object-cover;
+}
+
+.hero__info {
+  @apply flex flex-col items-center sm:items-start gap-3;
+}
+
+.hero__text {
+  @apply flex flex-col items-start gap-2;
+}
+
+.hero__title {
+  @apply text-2xl sm:text-4xl text-center sm:text-left font-bold;
+  @apply text-gray-900 dark:text-gray-100;
+}
+
+.hero__subtitle {
+  @apply text-gray-700 dark:text-gray-300 text-sm sm:text-lg max-w-xl rounded-2xl;
+}
+
+.hero__badge {
+  @apply flex gap-3;
+}
+
+.hero__badge-content {
+  @apply py-2 px-4 rounded-xl flex gap-2 items-center justify-center;
+  @apply bg-emerald-100 dark:bg-emerald-900/40 text-emerald-800 dark:text-emerald-300;
+  @apply border-2 border-emerald-200 dark:border-emerald-700;
+  @apply transition-all hover:scale-105;
+}
+
+.hero__badge-text {
+  @apply font-medium;
+}
+
+.hero__badge-icon {
+  @apply w-5 h-5;
+}
+
+/* Experience Component
+   ========================================================================== */
+.experience {
+  @apply w-full flex flex-col gap-10;
+}
+
+.experience__header {
+  @apply font-bold text-2xl text-gray-900 dark:text-gray-100 mb-6;
+  @apply flex items-center gap-3;
+}
+
+.experience__title {
+  @apply text-2xl font-bold;
+}
+
+.experience__icon {
+  @apply w-8 h-8;
+}
+
+.experience__list {
+  @apply flex flex-col gap-10;
+}
+
+.experience__item {
+  @apply flex flex-col gap-5;
+}
+
+.experience__item-header {
+  @apply flex flex-col gap-1;
+}
+
+.experience__item-title {
+  @apply text-lg font-semibold text-gray-800 dark:text-gray-200;
+}
+
+.experience__item-list {
+  @apply list-disc flex flex-col gap-2 ml-5;
+  @apply text-gray-700 dark:text-gray-300 text-base;
+}
+
+.experience__item-point {
+  @apply leading-relaxed;
+}
+
+/* Projects Component
+   ========================================================================== */
+.projects {
+  @apply w-full flex flex-col gap-10;
+}
+
+.projects__header {
+  @apply font-bold text-2xl text-gray-900 dark:text-gray-100 mb-6;
+  @apply flex items-center gap-3;
+}
+
+.projects__title {
+  @apply text-2xl font-bold;
+}
+
+.projects__icon {
+  @apply w-8 h-8;
+}
+
+.projects__grid {
+  @apply grid gap-10 grid-cols-1;
+}
+
+/* Project Card
+   ========================================================================== */
+.project-card {
+  @apply grid gap-4 sm:gap-7 md:grid-cols-2;
+}
+
+.project-card__link {
+  @apply block;
+}
+
+.project-card__image-wrapper {
+  @apply relative rounded-xl overflow-hidden flex;
+  @apply bg-gray-100 dark:bg-[#0f0f0f];
+  @apply transition-transform duration-500;
+}
+
+.project-card__image {
+  @apply rounded-lg duration-500 transition-all;
+  @apply translate-x-9 translate-y-9;
+  @apply group-hover:translate-x-7 group-hover:translate-y-7;
+}
+
+.project-card__content {
+  @apply flex flex-col gap-2.5 justify-center;
+}
+
+.project-card__title {
+  @apply font-bold text-3xl text-gray-900 dark:text-white;
+}
+
+.project-card__description {
+  @apply text-gray-700 dark:text-gray-300 text-lg;
+}
+
+.project-card__tech {
+  @apply flex gap-2 items-center mb-1;
+}
+
+/* Tech Badge
+   ========================================================================== */
+.tech-badge {
+  @apply relative;
+}
+
+.tech-badge__tooltip {
+  @apply absolute pointer-events-none transition-all opacity-0 z-20;
+  @apply bottom-full -translate-y-0 py-1 px-1.5 text-xs;
+  @apply left-1/2 -translate-x-1/2 rounded-md whitespace-nowrap;
+  @apply text-white bg-gray-900 dark:bg-white dark:text-gray-900;
+  @apply before:content-[''] before:absolute before:bg-gray-900 dark:before:bg-white;
+  @apply before:rounded-sm before:w-2.5 before:rotate-45 before:h-2.5;
+  @apply before:-bottom-1 before:-z-10 before:left-1/2 before:-translate-x-1/2;
+  @apply group-hover/tooltip:opacity-100 group-hover/tooltip:-translate-y-3;
+}
+
+/* Contact Component
+   ========================================================================== */
+.contact {
+  @apply w-full flex flex-col items-center gap-8 py-16;
+}
+
+.contact__title {
+  @apply text-3xl font-bold text-gray-900 dark:text-gray-100;
+}
+
+.contact__links {
+  @apply flex gap-4;
+}
+
+.contact__link {
+  @apply w-12 h-12 rounded-full flex items-center justify-center;
+  @apply bg-gray-100 dark:bg-[#0f0f0f] border-2 border-gray-200 dark:border-[#2a2a2a];
+  @apply text-gray-700 dark:text-gray-300;
+  @apply transition-all duration-300;
+  @apply hover:scale-110 hover:border-gray-900 dark:hover:border-emerald-500;
+  @apply hover:bg-gray-900 dark:hover:bg-emerald-900/40;
+  @apply hover:text-white dark:hover:text-emerald-300;
+}
+
+.contact__icon {
+  @apply w-6 h-6;
+}
