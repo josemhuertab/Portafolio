@@ -11,24 +11,24 @@ export default function Experience() {
         <article className="experience__item">
           <div className="experience__item-header">
             <h3 className="experience__item-title">
-              Desarrollador Frontend • Empresa Tecnológica
+              Desarrollador Frontend Junior - SynchroDev SpA
             </h3>
           </div>
           <ul className="experience__item-list">
             <li className="experience__item-point">
-              Desarrollo de componentes reutilizables con React y TypeScript
+              Creación de componentes y funcionalidades en Front-End utilizando Vue.js, Vuetify, Bootstrap, entre otros
             </li>
             <li className="experience__item-point">
-              Implementación de diseños responsivos con Tailwind CSS
+              Diseño de interfaces de usuario desde cero y conversión a web adaptable para cualquier tamaño de pantalla
             </li>
             <li className="experience__item-point">
-              Optimización de rendimiento y mejora de Core Web Vitals
+              Implementación de consumo de APIs REST para integrar funcionalidades dinámicas y mejorar la eficiencia en la gestión de datos
             </li>
             <li className="experience__item-point">
-              Colaboración con equipos de diseño para crear interfaces intuitivas
+              Participación en el desarrollo de sistemas, desde sus requerimientos hasta producción
             </li>
             <li className="experience__item-point">
-              Integración de APIs RESTful y GraphQL
+              Ejecución de pruebas funcionales y colaboración en la puesta en marcha de sistemas en producción
             </li>
           </ul>
         </article>

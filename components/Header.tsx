@@ -1,9 +1,11 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 export default function Header() {
   const [isDark, setIsDark] = useState(false)
+  const [showHeroInfo, setShowHeroInfo] = useState(false)
 
   useEffect(() => {
     const theme = localStorage.getItem('theme')
@@ -12,6 +14,19 @@ export default function Header() {
     if (theme === 'dark' || (!theme && prefersDark)) {
       setIsDark(true)
     }
+  }, [])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroSection = document.querySelector('.hero')
+      if (heroSection) {
+        const heroRect = heroSection.getBoundingClientRect()
+        setShowHeroInfo(heroRect.bottom < 100)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const toggleTheme = () => {
@@ -28,8 +43,28 @@ export default function Header() {
   }
 
   return (
-    <header className="header">
+    <header className={`header ${showHeroInfo ? 'header--expanded' : ''}`}>
       <div className="header__container">
+        {showHeroInfo && (
+          <div className="header__hero-info">
+            <div className="header__hero-image-wrapper">
+              <Image
+                src="/profile-photo.png"
+                alt="José Huerta"
+                width={48}
+                height={48}
+                className="header__hero-image"
+                unoptimized
+              />
+            </div>
+            <div className="header__hero-text">
+              <h2 className="header__hero-name">José Huerta</h2>
+              <p className="header__hero-description">
+                Apasionado del Desarrollo Frontend y el diseño UX/UI
+              </p>
+            </div>
+          </div>
+        )}
         <button
           onClick={toggleTheme}
           className="header__theme-toggle"

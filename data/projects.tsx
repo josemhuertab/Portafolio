@@ -1,14 +1,3 @@
-/**
- * ARCHIVO DE CONFIGURACIÓN DE PROYECTOS
- * 
- * Edita este archivo para agregar, modificar o eliminar proyectos de tu portafolio.
- * 
- * INSTRUCCIONES:
- * 1. Coloca las imágenes de tus proyectos en la carpeta: public/projects/
- * 2. Agrega o modifica los objetos del array 'projects' siguiendo la estructura
- * 3. Puedes encontrar iconos SVG en: https://heroicons.com/ o https://simpleicons.org/
- */
-
 import React from 'react'
 
 export interface Project {
@@ -22,20 +11,28 @@ export interface Project {
   }[]
 }
 
-// Iconos reutilizables de tecnologías comunes (como strings de nombre)
 export const TechIcons = {
   nextjs: 'nextjs',
   react: 'react',
   typescript: 'typescript',
   tailwind: 'tailwind',
+  vuetify: 'vuetify',
+  vuejs: 'vuejs',
+  firebase: 'firebase'
 } as const
 
-// Componente para renderizar iconos
 export const TechIcon: React.FC<{ name: string; className?: string }> = ({ name, className = '' }) => {
   const icons: Record<string, JSX.Element> = {
     nextjs: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className={className}>
         <path d="M11.5725 0c-.1763 0-.3098.0013-.3584.0067-.0516.0053-.2159.021-.3636.0328-3.4088.3073-6.6017 2.1463-8.624 4.9728C1.1004 6.584.3802 8.3666.1082 10.255c-.0962.659-.108.8537-.108 1.7474s.012 1.0884.108 1.7476c.652 4.506 3.8591 8.2919 8.2087 9.6945.7789.2511 1.6.4223 2.5337.5255.3636.04 1.9354.04 2.299 0 1.6117-.1783 2.9772-.577 4.3237-1.2643.2065-.1056.2464-.1337.2183-.1573-.0188-.0139-.8987-1.1938-1.9543-2.62l-1.919-2.592-2.4047-3.5583c-1.3231-1.9564-2.4117-3.556-2.4211-3.556-.0094-.0026-.0187 1.5787-.0235 3.509-.0067 3.3802-.0093 3.5162-.0516 3.596-.061.115-.108.1618-.2064.2134-.075.0374-.1408.0445-.495.0445h-.406l-.1078-.068a.4383.4383 0 01-.1572-.1712l-.0493-.1056.0053-4.703.0067-4.7054.0726-.0915c.0376-.0493.1174-.1125.1736-.143.0962-.047.1338-.0517.5396-.0517.4787 0 .5584.0187.6827.1547.0353.0377 1.3373 1.9987 2.895 4.3608a10760.433 10760.433 0 004.7344 7.1706l1.9002 2.8782.0971-.0633c.8518-.5536 1.7525-1.3418 2.4657-2.1627 1.5179-1.7429 2.4963-3.868 2.8247-6.134.0961-.6591.1078-.854.1078-1.7475 0-.8937-.012-1.0884-.1078-1.7476-.6522-4.506-3.8592-8.2919-8.2087-9.6945-.7672-.2487-1.5836-.42-2.4985-.5232-.169-.0176-1.0835-.0366-1.6123-.037zm4.0685 7.217c.3473 0 .4082.0053.4857.047.1127.0562.204.1642.237.2767.0186.061.0234 1.3653.0186 4.3044l-.0067 4.2175-1.7436-2.6769-1.7471-2.6769v2.5897c0 2.3598.0093 2.6001.0633 2.6906.0375.0631.1562.1351.2323.1478.0961.0188 1.9781-.0026 2.299 0 1.6117-.1783 2.9772-.577 4.3237-1.2643.2065-.1056.2464-.1337.2183-.1573-.0188-.0139-.8987-1.1938-1.9543-2.62l-1.919-2.592-2.4047-3.5583c-1.3231-1.9564-2.4117-3.556-2.4211-3.556-.0094-.0026-.0187 1.5787-.0235 3.509-.0067 3.3802-.0093 3.5162-.0516 3.596-.061.115-.108.1618-.2064.2134-.075.0374-.1408.0445-.495.0445h-.406l-.1078-.068a.4383.4383 0 01-.1572-.1712l-.0493-.1056.0053-4.703.0067-4.7054.0726-.0915c.0376-.0493.1174-.1125.1736-.143.0962-.047.1338-.0517.5396-.0517.4787 0 .5584.0187.6827.1547.0353.0377 1.3373 1.9987 2.895 4.3608z"/>
+      </svg>
+    ),
+    vuejs: (
+      <svg width="20" height="20" viewBox="0 0 256 221" className={className}>
+        <path d="M204.8 0H256L128 220.8 0 0h97.92L128 51.2 157.44 0h47.36z" fill="#41B883"/>
+        <path d="M0 0l128 220.8L256 0h-51.2L128 132.48 50.56 0H0z" fill="#41B883"/>
+        <path d="M50.56 0L128 133.12 204.8 0h-47.36L128 51.2 97.92 0H50.56z" fill="#35495E"/>
       </svg>
     ),
     react: (
@@ -44,7 +41,7 @@ export const TechIcon: React.FC<{ name: string; className?: string }> = ({ name,
       </svg>
     ),
     typescript: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="#3178C6" className={className}>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff41cff" className={className}>
         <path d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z"/>
       </svg>
     ),
@@ -53,40 +50,34 @@ export const TechIcon: React.FC<{ name: string; className?: string }> = ({ name,
         <path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"/>
       </svg>
     ),
+    vuetify: (
+      <svg width="20" height="20" viewBox="0 0 24 24" className={className}>
+        <path d="M7.094 0L12 10.188L16.906 0H21l-9 19.5L3 0h4.094z" fill="#1867C0"/>
+        <path d="M12 10.188L7.094 0H3l9 19.5z" fill="#1867C0" opacity="0.7"/>
+        <path d="M12 10.188L16.906 0H21l-9 19.5z" fill="#AEDDFF"/>
+      </svg>
+    ),
+    firebase: (
+      <svg width="20" height="20" viewBox="0 0 24 24" className={className}>
+        <path d="M3.89 15.672L6.255.461A.542.542 0 017.27.288l2.543 4.771zm16.794 3.692l-2.25-14a.54.54 0 00-.919-.295L3.316 19.365l7.856 4.427a1.621 1.621 0 001.588 0zM14.3 7.147l-1.82-3.482a.542.542 0 00-.96 0L3.53 17.984z" fill="#FFA611"/>
+      </svg>
+    ),
   }
 
   return icons[name] || null
 }
 
-/**
- * ARRAY DE PROYECTOS
- * 
- * Agrega tus proyectos aquí siguiendo este formato:
- */
 export const projects: Project[] = [
   {
-    title: 'Proyecto Ejemplo 1',
-    description: 'Aplicación web moderna construida con Next.js y React. Incluye autenticación, dashboard interactivo y diseño responsive.',
-    image: '/project-placeholder.svg', // Reemplaza con tu imagen: /projects/tu-proyecto.jpg
-    url: 'https://ejemplo.com',
+    title: 'Spendly',
+    description: 'Aplicación web y PWA de gestión financiera personal con registro de transacciones, control de compras, ahorros y dashboards analíticos',
+    image: '/projects/spendly-preview.jpg',
+    url: 'https://spendlywebsite.vercel.app',
     technologies: [
-      { name: 'Next.js', icon: TechIcons.nextjs },
-      { name: 'React', icon: TechIcons.react },
-      { name: 'TypeScript', icon: TechIcons.typescript },
+      { name: 'Vue.js', icon: TechIcons.vuejs },
       { name: 'Tailwind CSS', icon: TechIcons.tailwind },
+      { name: 'Vuetify', icon:TechIcons.vuetify},
+      {name: 'Firebase', icon:TechIcons.firebase}
     ],
   },
-  // Descomenta y edita este ejemplo para agregar más proyectos:
-  /*
-  {
-    title: 'Tu Proyecto 2',
-    description: 'Descripción de tu segundo proyecto...',
-    image: '/projects/project-2.jpg',
-    url: 'https://tu-proyecto.com',
-    technologies: [
-      { name: 'Next.js', icon: TechIcons.nextjs },
-      { name: 'React', icon: TechIcons.react },
-    ],
-  },
-  */
 ]

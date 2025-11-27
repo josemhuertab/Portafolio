@@ -37,7 +37,7 @@ export default function Contact() {
 
   return (
     <section className="contact">
-      <h2 className="contact__title">Conectemos</h2>
+      <h2 className="contact__title">Contacto</h2>
       <div className="contact__links">
         {socialLinks.map((link, index) => {
           const { Icon } = link

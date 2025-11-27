@@ -1,6 +1,4 @@
-/* ==========================================================================
-   PORTFOLIO COMPONENTS - BEM Methodology
-   ========================================================================== */
+
 
 /* Portfolio Container
    ========================================================================== */
@@ -13,27 +11,72 @@
 }
 
 .portfolio__divider {
-  @apply border border-dotted border-gray-300 dark:border-gray-700 rounded-md;
+  @apply border border-solid border-gray-500 dark:border-gray-500 rounded-md;
 }
 
 /* Header Component
    ========================================================================== */
 .header {
   @apply mx-auto max-w-3xl sticky top-0 z-10;
+  @apply transition-all duration-300;
 }
 
 .header__container {
   @apply w-full bottom-0 static flex justify-end items-center py-1 px-5 z-20;
   @apply bg-white/80 dark:bg-[#1a1a1a]/80 backdrop-blur-lg;
+  @apply transition-all duration-300;
+}
+
+.header--expanded .header__container {
+  @apply justify-between;
+}
+
+.header__hero-info {
+  @apply flex items-center gap-3;
+  animation: slideIn 0.1s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header__hero-image-wrapper {
+  @apply relative w-12 h-12 border-2 border-gray-100 dark:border-gray-800;
+  @apply bg-gray-100 dark:bg-[#000000] rounded-full shadow-lg overflow-hidden flex-shrink-0;
+}
+
+.header__hero-image {
+  @apply rounded-full object-cover;
+}
+
+.header__hero-text {
+  @apply flex flex-col gap-0.5;
+}
+
+.header__hero-name {
+  @apply text-sm sm:text-base font-bold text-gray-900 dark:text-gray-100;
+  @apply leading-tight;
+}
+
+.header__hero-description {
+  @apply text-xs sm:text-sm text-gray-600 dark:text-gray-400;
+  @apply leading-tight hidden sm:block;
 }
 
 .header__theme-toggle {
-  @apply py-4 px-2 sm:py-5 flex items-center gap-4 outline-none;
+  @apply py-4 px-2 sm:py-5 flex items-center gap-4 outline-none flex-shrink-0;
   @apply transition-transform hover:scale-110 active:scale-95;
 }
 
 .header__icon {
-  @apply w-6 h-6 text-gray-700 dark:text-gray-200;
+  @apply w-5 h-5 text-gray-900 dark:text-gray-100;
 }
 
 /* Hero Component
@@ -47,8 +90,8 @@
 }
 
 .hero__image-wrapper {
-  @apply relative w-44 h-44 border-8 border-white dark:border-[#0f0f0f];
-  @apply bg-gray-100 dark:bg-[#0f0f0f] shadow-lg rounded-full overflow-hidden;
+  @apply relative w-44 h-44 border-8 border-[#ffffff] dark:border-[#282828];
+  @apply bg-gray-100 dark:bg-[#000000] shadow-lg rounded-full overflow-hidden;
 }
 
 .hero__image {
@@ -77,14 +120,13 @@
 }
 
 .hero__badge-content {
-  @apply py-2 px-4 rounded-xl flex gap-2 items-center justify-center;
+  @apply py-2 px-2 rounded-xl flex gap-2 items-center justify-center;
   @apply bg-emerald-100 dark:bg-emerald-900/40 text-emerald-800 dark:text-emerald-300;
   @apply border-2 border-emerald-200 dark:border-emerald-700;
-  @apply transition-all hover:scale-105;
 }
 
 .hero__badge-text {
-  @apply font-medium;
+  @apply font-semibold text-sm;
 }
 
 .hero__badge-icon {
@@ -94,7 +136,7 @@
 /* Experience Component
    ========================================================================== */
 .experience {
-  @apply w-full flex flex-col gap-10;
+  @apply w-full flex flex-col gap-2;
 }
 
 .experience__header {
@@ -107,7 +149,7 @@
 }
 
 .experience__icon {
-  @apply w-8 h-8;
+  @apply w-6 h-6;
 }
 
 .experience__list {
@@ -138,7 +180,7 @@
 /* Projects Component
    ========================================================================== */
 .projects {
-  @apply w-full flex flex-col gap-10;
+  @apply w-full flex flex-col gap-2;
 }
 
 .projects__header {
@@ -151,7 +193,7 @@
 }
 
 .projects__icon {
-  @apply w-8 h-8;
+  @apply w-6 h-6;
 }
 
 .projects__grid {
@@ -165,27 +207,56 @@
 }
 
 .project-card__link {
-  @apply block;
+  @apply block relative;
 }
 
 .project-card__image-wrapper {
-  @apply relative rounded-xl overflow-hidden flex;
+  @apply relative rounded-xl overflow-hidden;
   @apply bg-gray-100 dark:bg-[#0f0f0f];
-  @apply transition-transform duration-500;
+  @apply transition-all duration-300;
+  @apply isolate;
 }
 
 .project-card__image {
-  @apply rounded-lg duration-500 transition-all;
-  @apply translate-x-9 translate-y-9;
-  @apply group-hover:translate-x-7 group-hover:translate-y-7;
+  @apply w-full h-full object-cover rounded-xl;
+  @apply transition-all duration-300;
+}
+
+.project-card__overlay {
+  @apply absolute inset-0 flex items-center justify-center;
+  @apply bg-black/0 transition-all duration-300;
+  @apply opacity-0 group-hover:opacity-100 group-hover:bg-black/50;
+}
+
+.project-card__overlay-text {
+  @apply text-white font-semibold text-sm px-3 py-1.5 rounded-md;
+  @apply bg-emerald-600 dark:bg-emerald-500;
+  @apply transform translate-y-2 group-hover:translate-y-0;
+  @apply transition-all duration-300;
 }
 
 .project-card__content {
   @apply flex flex-col gap-2.5 justify-center;
 }
 
+.project-card__header {
+  @apply flex flex-col gap-1;
+}
+
 .project-card__title {
   @apply font-bold text-3xl text-gray-900 dark:text-white;
+}
+
+.project-card__url {
+  @apply inline-flex items-center gap-1.5 text-sm;
+  @apply text-gray-500 dark:text-gray-400;
+  @apply transition-all duration-300;
+  @apply hover:text-emerald-600 dark:hover:text-emerald-400;
+  @apply w-fit;
+}
+
+.project-card__url-icon {
+  @apply w-3.5 h-3.5;
 }
 
 .project-card__description {
@@ -232,9 +303,9 @@
   @apply bg-gray-100 dark:bg-[#0f0f0f] border-2 border-gray-200 dark:border-[#2a2a2a];
   @apply text-gray-700 dark:text-gray-300;
   @apply transition-all duration-300;
-  @apply hover:scale-110 hover:border-gray-900 dark:hover:border-emerald-500;
-  @apply hover:bg-gray-900 dark:hover:bg-emerald-900/40;
-  @apply hover:text-white dark:hover:text-emerald-300;
+  @apply hover:scale-110 hover:border-emerald-200 dark:hover:border-emerald-700;
+  @apply hover:bg-emerald-100 dark:hover:bg-emerald-900/40;
+  @apply hover:text-emerald-800 dark:hover:text-emerald-300;
 }
 
 .contact__icon {

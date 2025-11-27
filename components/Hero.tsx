@@ -19,7 +19,7 @@ export default function Hero() {
           <div className="hero__text">
             <h1 className="hero__title">José Huerta</h1>
             <p className="hero__subtitle">
-              Apasionado del Desarrollo Frontend y el diseño UI/UX
+              Apasionado del Desarrollo Frontend y el diseño UX/UI
             </p>
           </div>
           <div className="hero__badge">
