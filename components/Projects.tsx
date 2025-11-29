@@ -22,10 +22,11 @@ export default function Projects() {
               <div className="project-card__image-wrapper">
                 <Image
                   src={project.image}
-                  alt={project.title}
+                  alt={`Captura de pantalla del proyecto ${project.title}`}
                   width={928}
                   height={599}
                   className="project-card__image"
+                  loading="lazy"
                 />
                 <div className="project-card__overlay">
                   <span className="project-card__overlay-text">Ver proyecto</span>
