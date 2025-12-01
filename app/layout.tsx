@@ -4,16 +4,38 @@ import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' })
 
-const siteUrl = 'https://josehuerta.dev' // Cambia esto por tu URL real
+const siteUrl = 'https://jhuerta.vercel.app'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'José Huerta | Desarrollador Frontend & Diseñador UX/UI',
+    default: 'José Huerta | Desarrollador Frontend Junior - Vue.js, React & UX/UI',
     template: '%s | José Huerta'
   },
-  description: 'Desarrollador Frontend especializado en React, Vue.js, TypeScript y diseño UX/UI. Creando experiencias web modernas y accesibles.',
-  keywords: ['José Huerta', 'Desarrollador Frontend', 'React', 'Vue.js', 'TypeScript', 'UI/UX', 'Tailwind CSS', 'Next.js', 'Vuetify', 'Bootstrap', 'Desarrollador Web', 'Portfolio'],
+  description: 'Desarrollador Frontend Junior especializado en Vue.js, React, JavaScript y diseño UX/UI. Experiencia en consumo de APIs REST, Firebase, Tailwind CSS, Bootstrap y Vuetify. Disponible para nuevos proyectos.',
+  keywords: [
+    'José Huerta',
+    'Desarrollador Frontend Junior',
+    'Vue.js',
+    'React',
+    'JavaScript',
+    'HTML',
+    'CSS',
+    'UX/UI',
+    'Tailwind CSS',
+    'Bootstrap',
+    'Vuetify',
+    'Next.js',
+    'jQuery',
+    'Firebase',
+    'API REST',
+    'Consumo de APIs',
+    'Desarrollador Web',
+    'Frontend Developer',
+    'Diseño Web Responsivo',
+    'Portfolio',
+    'Chile'
+  ],
   authors: [{ name: 'José Huerta', url: siteUrl }],
   creator: 'José Huerta',
   publisher: 'José Huerta',
@@ -26,24 +48,23 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'es_ES',
     url: siteUrl,
-    title: 'José Huerta | Desarrollador Frontend & Diseñador UX/UI',
-    description: 'Desarrollador Frontend especializado en React, Vue.js, TypeScript y diseño UX/UI. Creando experiencias web modernas y accesibles.',
-    siteName: 'José Huerta Portfolio',
+    title: 'José Huerta | Desarrollador Frontend Junior - Vue.js, React & UX/UI',
+    description: 'Desarrollador Frontend Junior con experiencia en Vue.js, React, JavaScript y diseño UX/UI. Especializado en consumo de APIs REST y desarrollo de interfaces responsivas.',
+    siteName: 'José Huerta - Portfolio',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'José Huerta - Desarrollador Frontend',
+        alt: 'José Huerta - Desarrollador Frontend Junior',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'José Huerta | Desarrollador Frontend & Diseñador UX/UI',
-    description: 'Desarrollador Frontend especializado en React, Vue.js, TypeScript y diseño UX/UI.',
+    title: 'José Huerta | Desarrollador Frontend Junior - Vue.js, React & UX/UI',
+    description: 'Desarrollador Frontend Junior especializado en Vue.js, React, JavaScript y diseño UX/UI. Disponible para nuevos proyectos.',
     images: ['/og-image.jpg'],
-    creator: '@josemhuertab',
   },
   robots: {
     index: true,
@@ -81,14 +102,33 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'José Huerta',
-    jobTitle: 'Desarrollador Frontend',
-    url: 'https://josehuerta.dev',
+    jobTitle: 'Desarrollador Frontend Junior',
+    url: 'https://jhuerta.vercel.app',
     sameAs: [
       'https://github.com/josemhuertab',
       'https://linkedin.com/in/josemhuertab',
     ],
-    knowsAbout: ['React', 'Vue.js', 'TypeScript', 'JavaScript', 'UI/UX Design', 'Frontend Development'],
-    description: 'Desarrollador Frontend especializado en React, Vue.js, TypeScript y diseño UX/UI',
+    knowsAbout: [
+      'Desarrollo Frontend',
+      'Vue.js',
+      'React',
+      'JavaScript',
+      'HTML',
+      'CSS',
+      'UX/UI Design',
+      'Tailwind CSS',
+      'Bootstrap',
+      'Vuetify',
+      'Next.js',
+      'jQuery',
+      'Firebase',
+      'API REST',
+      'Consumo de APIs',
+      'Diseño Web Responsivo',
+      'Desarrollo de Componentes',
+      'Interfaces de Usuario'
+    ],
+    description: 'Desarrollador Frontend Junior especializado en Vue.js, React, JavaScript y diseño UX/UI. Experiencia en consumo de APIs REST, Firebase y desarrollo de interfaces responsivas.',
   }
 
   return (

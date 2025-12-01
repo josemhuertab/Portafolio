@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://josehuerta.dev/sitemap.xml
+Sitemap: https://jhuerta.vercel.app/sitemap.xml
