@@ -67,7 +67,7 @@
 
 .header__hero-description {
   @apply text-xs sm:text-sm text-gray-600 dark:text-gray-400;
-  @apply leading-tight hidden sm:block;
+  @apply leading-tight;
 }
 
 .header__theme-toggle {
