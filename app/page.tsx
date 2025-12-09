@@ -7,7 +7,6 @@ import Contact from '@/components/Contact'
 
 export const metadata: Metadata = {
   title: 'Portafolio | José Huerta',
-  description: 'Portfolio José Huerta - Desarrollador Frontend Junior.',
 }
 
 export default function Home() {

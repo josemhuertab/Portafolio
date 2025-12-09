@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.skip-to-content {
+  @apply absolute left-0 top-0 -translate-y-full p-3 bg-emerald-600 text-white z-50 transition-transform focus:translate-y-0;
+}
+
 @import '../styles/components.css';
 
 :root {

@@ -71,7 +71,7 @@ export const projects: Project[] = [
   {
     title: 'Spendly',
     description: 'Aplicación web y PWA de gestión financiera personal con registro de transacciones, control de compras, ahorros y dashboards analíticos',
-    image: '/projects/spendly-preview.jpg',
+    image: '/images/projects/spendly-preview.jpg',
     url: 'https://spendlywebsite.vercel.app',
     technologies: [
       { name: 'Vue.js', icon: TechIcons.vuejs },

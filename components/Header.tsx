@@ -49,7 +49,7 @@ export default function Header() {
           <div className="header__hero-info">
             <div className="header__hero-image-wrapper">
               <Image
-                src="/profile-photo.png"
+                src="/images/profile-photo.jpg"
                 alt="José Huerta"
                 width={48}
                 height={48}

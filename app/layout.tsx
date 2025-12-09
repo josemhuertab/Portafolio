@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     siteName: 'José Huerta - Portfolio',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/images/profile-photo.jpg',
         width: 1200,
         height: 630,
         alt: 'José Huerta - Desarrollador Frontend Junior',
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'José Huerta | Desarrollador Frontend Junior - Vue.js, React & UX/UI',
     description: 'Desarrollador Frontend Junior especializado en Vue.js, React, JavaScript y diseño UX/UI. Disponible para nuevos proyectos.',
-    images: ['/og-image.jpg'],
+    images: ['/images/profile-photo.jpg'],
   },
   robots: {
     index: true,
@@ -78,14 +78,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [
-      { url: '/favicon.ico' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
+    icon: '/favicon.ico',
+    apple: [],
   },
   manifest: '/site.webmanifest',
   alternates: {
@@ -137,6 +131,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -156,6 +151,9 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className} suppressHydrationWarning>
+        <a href="#main-content" className="skip-to-content">
+          Saltar al contenido principal
+        </a>
         {children}
       </body>
     </html>
