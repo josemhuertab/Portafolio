@@ -183,6 +183,10 @@
   @apply text-lg font-semibold text-gray-800 dark:text-gray-200;
 }
 
+.experience__item-period {
+  @apply italic text-sm text-gray-500 dark:text-gray-400;
+}
+
 .experience__item-list {
   @apply list-disc flex flex-col gap-2 ml-5;
   @apply text-gray-700 dark:text-gray-300 text-base;

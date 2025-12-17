@@ -13,6 +13,9 @@ export default function Experience() {
             <h3 className="experience__item-title">
               Desarrollador Frontend Junior - SynchroDev SpA
             </h3>
+            <h5 className="experience__item-period">
+              Octubre 2024 - Actualidad
+            </h5>
           </div>
           <ul className="experience__item-list">
             <li className="experience__item-point">
