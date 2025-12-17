@@ -12,7 +12,6 @@ export default function Hero() {
             height={176}
             className="hero__image"
             priority
-            unoptimized
           />
         </div>
         <div className="hero__info">

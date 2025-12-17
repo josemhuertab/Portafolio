@@ -51,10 +51,9 @@ export default function Header() {
               <Image
                 src="/images/profile-photo.jpg"
                 alt="José Huerta"
-                width={48}
-                height={48}
+                width={96}
+                height={96}
                 className="header__hero-image"
-                unoptimized
               />
             </div>
             <div className="header__hero-text">
