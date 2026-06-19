@@ -38,6 +38,9 @@ export default function Contact() {
   return (
     <section className="contact">
       <h2 className="contact__title">Contacto</h2>
+      <a href="mailto:josem.huertab@gmail.com" className="contact__email">
+        josem.huertab@gmail.com
+      </a>
       <div className="contact__links">
         {socialLinks.map((link, index) => {
           const { Icon } = link

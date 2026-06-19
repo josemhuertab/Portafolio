@@ -10,6 +10,7 @@ export default function Hero() {
             alt="José Huerta - Desarrollador Frontend"
             width={176}
             height={176}
+            sizes="176px"
             className="hero__image"
             priority
           />
@@ -18,7 +19,7 @@ export default function Hero() {
           <div className="hero__text">
             <h1 className="hero__title">José Huerta</h1>
             <p className="hero__subtitle">
-              Apasionado del Desarrollo Frontend y el diseño UX/UI
+              Desarrollo Frontend · UX/UI · Entornos Full Stack
             </p>
           </div>
           <div className="hero__actions">
@@ -31,7 +32,7 @@ export default function Hero() {
               </div>
             </div>
             
-            <a href="/documents/cv.pdf" download className="hero__cv-button" aria-label="Descargar CV">
+            <a href="/documents/CV José Huerta.pdf" download className="hero__cv-button" aria-label="Descargar CV">
               <span>Descargar CV</span>
               <svg className="hero__badge-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />

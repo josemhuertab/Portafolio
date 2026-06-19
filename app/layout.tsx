@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import DotBackground from '@/components/DotBackground'
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' })
 
@@ -9,32 +10,35 @@ const siteUrl = 'https://jhuerta.vercel.app'
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'José Huerta | Desarrollador Frontend Junior - Vue.js, React & UX/UI',
+    default: 'José Huerta | Desarrollo Frontend · UX/UI · Entornos Full Stack',
     template: '%s | José Huerta'
   },
-  description: 'Desarrollador Frontend Junior especializado en Vue.js, React, JavaScript y diseño UX/UI. Experiencia en consumo de APIs REST, Firebase, Tailwind CSS, Bootstrap y Vuetify. Disponible para nuevos proyectos.',
+  description: 'Portfolio de José Huerta — desarrollo frontend con Vue 3, React y Next.js, con experiencia en entornos fullstack. Proyectos en producción: PWAs, sistemas POS y landing pages.',
   keywords: [
     'José Huerta',
     'Desarrollador Frontend Junior',
     'Vue.js',
+    'Vue 3',
+    'Pinia',
     'React',
     'JavaScript',
+    'TypeScript',
     'HTML',
     'CSS',
     'UX/UI',
     'Tailwind CSS',
-    'Bootstrap',
-    'Vuetify',
     'Next.js',
-    'jQuery',
     'Firebase',
+    'Firestore',
+    'PWA',
+    'Chart.js',
     'API REST',
-    'Consumo de APIs',
     'Desarrollador Web',
     'Frontend Developer',
     'Diseño Web Responsivo',
     'Portfolio',
-    'Chile'
+    'Chile',
+    'SynchroDev',
   ],
   authors: [{ name: 'José Huerta', url: siteUrl }],
   creator: 'José Huerta',
@@ -48,23 +52,23 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'es_ES',
     url: siteUrl,
-    title: 'José Huerta | Desarrollador Frontend Junior - Vue.js, React & UX/UI',
-    description: 'Desarrollador Frontend Junior con experiencia en Vue.js, React, JavaScript y diseño UX/UI. Especializado en consumo de APIs REST y desarrollo de interfaces responsivas.',
+    title: 'José Huerta | Desarrollador Frontend · UX/UI · Entornos Full Stack',
+    description: 'Portfolio de José Huerta — desarrollo frontend con Vue 3, React y Next.js. Proyectos en producción: PWAs, sistemas POS multi-tenant y landing pages orientadas a conversión.',
     siteName: 'José Huerta - Portfolio',
     images: [
       {
-        url: '/images/profile-photo.jpg',
+        url: '/images/og-image.jpeg',
         width: 1200,
         height: 630,
-        alt: 'José Huerta - Desarrollador Frontend Junior',
+        alt: 'José Huerta - Desarrollo Frontend · UX/UI · Entornos Full Stack',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'José Huerta | Desarrollador Frontend Junior - Vue.js, React & UX/UI',
-    description: 'Desarrollador Frontend Junior especializado en Vue.js, React, JavaScript y diseño UX/UI. Disponible para nuevos proyectos.',
-    images: ['/images/profile-photo.jpg'],
+    title: 'José Huerta | Desarrollo Frontend · UX/UI · Entornos Full Stack',
+    description: 'Portfolio de José Huerta — desarrollo frontend con Vue 3, React y Next.js. Proyectos en producción: PWAs, sistemas POS y landing pages.',
+    images: ['/images/og-image.jpeg'],
   },
   robots: {
     index: true,
@@ -105,22 +109,25 @@ export default function RootLayout({
     knowsAbout: [
       'Desarrollo Frontend',
       'Vue.js',
+      'Vue 3 Composition API',
+      'Pinia',
       'React',
       'JavaScript',
+      'TypeScript',
       'HTML',
       'CSS',
       'UX/UI Design',
       'Tailwind CSS',
-      'Bootstrap',
-      'Vuetify',
       'Next.js',
-      'jQuery',
       'Firebase',
+      'Firestore',
+      'PWA',
+      'Chart.js',
       'API REST',
-      'Consumo de APIs',
       'Diseño Web Responsivo',
       'Desarrollo de Componentes',
-      'Interfaces de Usuario'
+      'Interfaces de Usuario',
+      'Java Spring Boot',
     ],
     description: 'Desarrollador Frontend Junior especializado en Vue.js, React, JavaScript y diseño UX/UI. Experiencia en consumo de APIs REST, Firebase y desarrollo de interfaces responsivas.',
   }
@@ -154,6 +161,7 @@ export default function RootLayout({
         <a href="#main-content" className="skip-to-content">
           Saltar al contenido principal
         </a>
+        <DotBackground />
         {children}
       </body>
     </html>

@@ -11,7 +11,7 @@ export default function Experience() {
         <article className="experience__item">
           <div className="experience__item-header">
             <h3 className="experience__item-title">
-              Desarrollador Frontend Junior - SynchroDev SpA
+              Desarrollador Fullstack Junior - SynchroDev SpA
             </h3>
             <h5 className="experience__item-period">
               Octubre 2024 - Actualidad
@@ -19,19 +19,19 @@ export default function Experience() {
           </div>
           <ul className="experience__item-list">
             <li className="experience__item-point">
-              Creación de componentes y funcionalidades en Front-End utilizando Vue.js, Vuetify, Bootstrap, entre otros
+              Desarrollo de interfaces web modulares y responsivas con Vue 3 (Composition API) y Tailwind CSS, con foco en componentes reutilizables, consistencia visual y experiencia de usuario
             </li>
             <li className="experience__item-point">
-              Diseño de interfaces de usuario desde cero y conversión a web adaptable para cualquier tamaño de pantalla
+              Implementación de features completos de extremo a extremo: landing page de marketing, modo demo con store en memoria y sistema de seguridad por inactividad con React Context y persistencia en Supabase
             </li>
             <li className="experience__item-point">
-              Implementación de consumo de APIs REST para integrar funcionalidades dinámicas y mejorar la eficiencia en la gestión de datos
+              Colaboración en servicios y APIs REST con Java Spring Boot, integrando endpoints al frontend y participando en la definición de contratos de datos
             </li>
             <li className="experience__item-point">
-              Participación en el desarrollo de sistemas, desde sus requerimientos hasta producción
+              Gestión de flujo de trabajo bajo metodologías Scrum/Kanban con Jira, participando en planificación de sprints y documentación técnica de requerimientos
             </li>
             <li className="experience__item-point">
-              Ejecución de pruebas funcionales y colaboración en la puesta en marcha de sistemas en producción
+              Participación directa en decisiones técnicas del producto, aportando criterio de frontend en la planificación estratégica orientada a los objetivos de cada cliente
             </li>
           </ul>
         </article>

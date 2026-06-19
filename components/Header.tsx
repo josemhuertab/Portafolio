@@ -59,7 +59,7 @@ export default function Header() {
             <div className="header__hero-text">
               <h2 className="header__hero-name">José Huerta</h2>
               <p className="header__hero-description">
-                Apasionado del Desarrollo Frontend y el diseño UX/UI
+                Desarrollo Frontend · UX/UI · Entornos Full Stack
               </p>
             </div>
           </div>

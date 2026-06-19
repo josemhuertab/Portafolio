@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import Experience from '@/components/Experience'
+import Skills from '@/components/Skills'
 import Projects from '@/components/Projects'
 import Contact from '@/components/Contact'
 
@@ -18,6 +19,9 @@ export default function Home() {
           <Hero />
           <div className="portfolio__divider" />
           <Experience />
+          <div className="portfolio__divider" />
+          <Skills />
+          <div className="portfolio__divider" />
           <Projects />
           <Contact />
         </div>

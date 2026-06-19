@@ -1,21 +1,16 @@
 {
-  "name": "José Huerta - Desarrollador Frontend Junior",
+  "name": "José Huerta - Portfolio",
   "short_name": "José Huerta",
-  "description": "Portfolio de José Huerta - Desarrollador Frontend Junior especializado en Vue.js, React y UX/UI",
+  "description": "Portfolio de José Huerta — Desarrollo Frontend · UX/UI · Entornos Full Stack",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#3b82f6",
+  "theme_color": "#10b981",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/android-chrome-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "src": "/images/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
     }
   ]
 }

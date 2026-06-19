@@ -1,5 +1,38 @@
 
 
+/* Dot Background
+   ========================================================================== */
+.dot-background {
+  @apply fixed inset-0 pointer-events-none overflow-hidden -z-10;
+  filter: blur(1.3px);
+}
+
+.dot-background__svg {
+  @apply w-full h-full;
+  /* La posición del SVG se estira para cubrir toda la pantalla */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.dot-background__dot {
+  fill: #6b7280; /* gray-500 */
+  opacity: var(--dot-base);
+  animation: dotBreath ease-in-out infinite;
+}
+
+html.dark .dot-background__dot {
+  fill: #4b5563; /* gray-600 */
+}
+
+@keyframes dotBreath {
+  0%   { opacity: var(--dot-base); }
+  50%  { opacity: var(--dot-peak); }
+  100% { opacity: var(--dot-base); }
+}
+
 /* Portfolio Container
    ========================================================================== */
 .portfolio {
@@ -215,8 +248,25 @@
   @apply w-6 h-6;
 }
 
+.projects__section {
+  @apply flex flex-col gap-8;
+}
+
+.projects__section-title {
+  @apply flex items-center gap-3 text-sm font-semibold uppercase tracking-widest;
+  @apply text-gray-400 dark:text-gray-500;
+}
+
+.projects__section-title-line {
+  @apply block h-px w-5 bg-gray-300 dark:bg-gray-600 flex-shrink-0;
+}
+
+.projects__divider {
+  @apply border-t border-dashed border-gray-200 dark:border-gray-700/60 my-4;
+}
+
 .projects__grid {
-  @apply grid gap-10 grid-cols-1;
+  @apply grid gap-12 grid-cols-1;
 }
 
 /* Project Card
@@ -225,45 +275,105 @@
   @apply grid gap-4 sm:gap-7 md:grid-cols-2;
 }
 
-.project-card__link {
+/* Carousel
+   ========================================================================== */
+.carousel {
+  @apply relative flex flex-col gap-2 outline-none;
+}
+
+.carousel__link {
   @apply block relative;
 }
 
-.project-card__image-wrapper {
+.carousel__image-wrapper {
   @apply relative rounded-xl overflow-hidden;
   @apply bg-gray-100 dark:bg-[#0f0f0f];
-  @apply transition-all duration-300;
-  @apply isolate;
+  @apply transition-all duration-300 isolate;
+  /* Altura fija para que el wrapper no colapse mientras las imágenes se posicionan */
+  aspect-ratio: 928 / 599;
 }
 
-.project-card__image {
+.carousel__image {
   @apply w-full h-full object-cover rounded-xl;
-  @apply transition-all duration-300;
+  @apply transition-opacity duration-300;
+  /* Todas las imágenes se apilan en el mismo espacio */
+  position: absolute;
+  inset: 0;
 }
 
-.project-card__overlay {
+.carousel__image--active {
+  @apply opacity-100;
+  z-index: 1;
+}
+
+.carousel__image--hidden {
+  @apply opacity-0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.carousel__overlay {
   @apply absolute inset-0 flex items-center justify-center;
   @apply bg-black/0 transition-all duration-300;
   @apply opacity-0 group-hover:opacity-100 group-hover:bg-black/50;
+  z-index: 2;
 }
 
-.project-card__overlay-text {
+.carousel__overlay-text {
   @apply text-white font-semibold text-sm px-3 py-1.5 rounded-md;
   @apply bg-emerald-600 dark:bg-emerald-500;
   @apply transform translate-y-2 group-hover:translate-y-0;
   @apply transition-all duration-300;
 }
 
+.carousel__controls {
+  @apply flex items-center justify-center gap-3;
+}
+
+.carousel__arrow {
+  @apply w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0;
+  @apply bg-emerald-100 dark:bg-emerald-900/40;
+  @apply border border-emerald-200 dark:border-emerald-700;
+  @apply text-emerald-800 dark:text-emerald-300;
+  @apply transition-all duration-200;
+  @apply hover:bg-emerald-200 dark:hover:bg-emerald-800/60 hover:scale-110 active:scale-95;
+}
+
+.carousel__dots {
+  @apply flex items-center gap-1.5;
+}
+
+.carousel__dot {
+  @apply w-1.5 h-1.5 rounded-full transition-all duration-200;
+  @apply bg-gray-300 dark:bg-gray-600;
+}
+
+.carousel__dot--active {
+  @apply w-3 bg-emerald-500 dark:bg-emerald-400;
+}
+
 .project-card__content {
-  @apply flex flex-col gap-2.5 justify-center;
+  @apply flex flex-col gap-3 justify-center;
 }
 
 .project-card__header {
   @apply flex flex-col gap-1;
 }
 
+.project-card__title-row {
+  @apply flex items-center gap-2.5 flex-wrap;
+}
+
 .project-card__title {
   @apply font-bold text-3xl text-gray-900 dark:text-white;
+}
+
+.project-card__role-badge {
+  @apply text-xs font-semibold px-2.5 py-1 rounded-full;
+  @apply bg-violet-100 dark:bg-violet-900/40;
+  @apply text-violet-700 dark:text-violet-300;
+  @apply border border-violet-200 dark:border-violet-700;
+  @apply tracking-wide;
 }
 
 .project-card__url {
@@ -279,11 +389,23 @@
 }
 
 .project-card__description {
-  @apply text-gray-700 dark:text-gray-300 text-lg;
+  @apply text-gray-600 dark:text-gray-400 text-base leading-relaxed;
+}
+
+.project-card__highlights {
+  @apply flex flex-col gap-1.5;
+}
+
+.project-card__highlight-item {
+  @apply flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300 leading-relaxed;
+}
+
+.project-card__highlight-dot {
+  @apply w-1.5 h-1.5 rounded-full bg-gray-400 dark:bg-gray-500 mt-1.5 flex-shrink-0;
 }
 
 .project-card__tech {
-  @apply flex gap-2 items-center mb-1;
+  @apply flex gap-2 items-center flex-wrap pt-1;
 }
 
 /* Tech Badge
@@ -303,14 +425,73 @@
   @apply group-hover/tooltip:opacity-100 group-hover/tooltip:-translate-y-3;
 }
 
-/* Contact Component
+/* Skills Component
    ========================================================================== */
+.skills {
+  @apply w-full flex flex-col gap-2;
+}
+
+.skills__header {
+  @apply font-bold text-2xl text-gray-900 dark:text-gray-100 mb-6;
+  @apply flex items-center gap-3;
+}
+
+.skills__title {
+  @apply text-2xl font-bold;
+}
+
+.skills__icon {
+  @apply w-6 h-6;
+}
+
+.skills__groups {
+  @apply flex flex-col gap-6;
+}
+
+.skills__group {
+  @apply flex flex-col gap-3;
+}
+
+.skills__group-title {
+  @apply flex items-center gap-3 text-sm font-semibold uppercase tracking-widest;
+  @apply text-gray-400 dark:text-gray-500;
+}
+
+.skills__group-title-line {
+  @apply block h-px w-5 bg-gray-300 dark:bg-gray-600 flex-shrink-0;
+}
+
+.skills__list {
+  @apply flex flex-wrap gap-2;
+}
+
+.skill-badge {
+  @apply flex items-center gap-2 px-3 py-1.5 rounded-xl;
+  @apply bg-gray-100 dark:bg-gray-800/60;
+  @apply border border-gray-200 dark:border-gray-700;
+  @apply transition-all duration-200;
+  @apply hover:border-emerald-200 dark:hover:border-emerald-700;
+  @apply hover:bg-emerald-50 dark:hover:bg-emerald-900/20;
+}
+
+.skill-badge__name {
+  @apply text-sm font-medium text-gray-700 dark:text-gray-300;
+}
+
+
 .contact {
   @apply w-full flex flex-col items-center gap-8 py-16;
 }
 
 .contact__title {
   @apply text-3xl font-bold text-gray-900 dark:text-gray-100;
+}
+
+.contact__email {
+  @apply text-base text-gray-500 dark:text-gray-400;
+  @apply transition-colors duration-200;
+  @apply hover:text-emerald-600 dark:hover:text-emerald-400;
+  @apply -mt-4;
 }
 
 .contact__links {
