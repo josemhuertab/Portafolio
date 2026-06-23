@@ -3,34 +3,28 @@
 /* Dot Background
    ========================================================================== */
 .dot-background {
-  @apply fixed inset-0 pointer-events-none overflow-hidden -z-10;
-  filter: blur(1.3px);
+  @apply fixed inset-0 pointer-events-none -z-10;
+  background-image: radial-gradient(circle, #6b7280 1px, transparent 1px);
+  background-size: 28px 28px;
+  animation: dotFade 8s ease-in-out infinite;
 }
 
-.dot-background__svg {
-  @apply w-full h-full;
-  /* La posición del SVG se estira para cubrir toda la pantalla */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+html.dark .dot-background {
+  background-image: radial-gradient(circle, #374151 1px, transparent 1px);
 }
 
-.dot-background__dot {
-  fill: #6b7280; /* gray-500 */
-  opacity: var(--dot-base);
-  animation: dotBreath ease-in-out infinite;
+@keyframes dotFade {
+  0%, 100% { opacity: 0.35; }
+  50%       { opacity: 0.15; }
 }
 
-html.dark .dot-background__dot {
-  fill: #4b5563; /* gray-600 */
+html.dark .dot-background {
+  animation: dotFadeDark 8s ease-in-out infinite;
 }
 
-@keyframes dotBreath {
-  0%   { opacity: var(--dot-base); }
-  50%  { opacity: var(--dot-peak); }
-  100% { opacity: var(--dot-base); }
+@keyframes dotFadeDark {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 0.25; }
 }
 
 /* Portfolio Container
